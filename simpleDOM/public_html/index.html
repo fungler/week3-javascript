@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Simple DOM</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="CSS/styling.css">
+        <script type="text/javascript" src="func.js"></script>
+    </head>
+    <body onload="putTable()">
+        <div id="outer">
+            
+            <div id="firstDiv"><p>hej</p></div>
+            <div id="secondDiv"><p>med</p></div>
+            <div id="thirdDiv"><p>dig</p></div>
+
+            <button id="colorswitch" type="button" onclick="giveRandomCol(divs)">Switch color</button>
+
+            <br>
+            <br>
+
+<!--            <div class="mydiv" id="fourthDiv" onclick="sayHelloFromDiv(this)"></div>
+            <div class="mydiv" id="fifthDiv" onclick="sayHelloFromDiv(this)"></div>-->
+            <div class="mydiv" id="fourthDiv"></div>
+            <div class="mydiv" id="fifthDiv"></div>
+            <br>
+            <div class="mydiv" id="a"></div>
+            <div class="mydiv" id="b"></div>
+            
+            <br>
+            <br>
+            
+            <p id="infoText"></p>
+            
+                        
+            <br>
+            <br>
+            
+            <div id="listWrapper">
+                <ul id="thelist">
+                    
+                </ul>
+            </div>
+            
+            <form>
+                <input type="text" name="name" value="Some name" id="thename">
+                <br><br>
+                <input type="button" onclick="addToList(document.getElementById('thename').value)" value="Add">
+            </form> 
+            
+            <div id="carWrapper">
+<!--                <table id="cartbl" style="width:100%">
+
+                </table>-->
+            </div>
+            
+            <form>
+                <input type="text" name="price" value="5000" id="lowerthan">
+                <br><br>
+                <input type="button" onclick="filterWithPrice(document.getElementById('lowerthan').value)" value="Find lower price">
+            </form> 
+            
+        </div>
+        
+        
+        <script language="javascript" type="text/javascript">
+
+            outer.onclick = function(event) {
+              //alert(event.target.id);
+              var p = document.getElementById("infoText").innerHTML = event.target.id;
+            };
+
+        </script>
+        
+    </body>
+</html>
