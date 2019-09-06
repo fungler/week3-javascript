@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Simple fetch</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+            <form>
+                <input type="text" name="name" value="Some name" id="theid">
+                <br><br>
+                <input type="button" onclick="getSpecificUser()" value="Get user">
+                <input type="button" onclick="getAllUsers()" value="Get all">
+            </form> 
+        
+            <div id="UserList">
+                
+            </div>
+        
+        <script language="javascript" type="text/javascript">
+            let baseURL = "https://jsonplaceholder.typicode.com/users/";
+            
+            function getSpecificUser() {
+                let newURL = "https://jsonplaceholder.typicode.com/users/" + document.getElementById("theid").value;
+                
+                fetch(newURL)
+                  .then(res => res.json()) //in flow1, just do it
+                  .then(data => {
+                  
+                  document.getElementById("UserList").innerHTML = JSON.stringify(data, null, 4);
+                    
+                });
+            }
+            
+            function getAllUsers() {
+                let newURL = "https://jsonplaceholder.typicode.com/users/";
+                
+                fetch(newURL)
+                  .then(res => res.json())
+                  .then(data => {
+                   document.getElementById("UserList").innerHTML = JSON.stringify(data, null, 4);     
+                });
+            }
+            
+        </script>
+    </body>
+</html>
